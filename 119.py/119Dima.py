@@ -69,9 +69,32 @@ ShirtFunctions = [ShirtOne, ShirtTwo, ShirtThree]
 
 SweaterOptions = ["Sweater One", "Sweater Two", "Sweater Three"]
 def SweaterOne():
-    builder.forward(10)
+    builder.fillcolor("Red")
+    builder.begin_fill()
+
+    builder.penup()
+    builder.goto(-75, 0)
+    builder.pendown()
+
+    builder.goto(-75, 150)
+    builder.goto(-150, 50)
+    builder.goto(-175, 0)
+    builder.goto(-210, 0)
+    builder.goto(-165, 110)
+    builder.goto(-115, 180)
+    builder.goto(-75, 220)
+    builder.goto(50, 220)
+    builder.goto(75, 220)
+    builder.goto(115, 180)
+    builder.goto(115, 100)
+    builder.goto(75, 150)
+    builder.goto(75, 0)
+    builder.goto(-75, 0)
+    builder.end_fill()
+
 def SweaterTwo():
     builder.forward(10)
+
 def SweaterThree():
     builder.forward(10)
 SweaterFunctions = [SweaterOne, SweaterTwo, SweaterThree]
