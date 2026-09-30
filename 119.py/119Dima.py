@@ -434,8 +434,8 @@ def Question1():
                 elif UserInputOne == "Shirt Three" or UserInputOne == "shirt three":
                     ShirtThree()
             elif UserInputOne not in InputOneAnswers:
-                sweaterAnswer()
-        sweaterAnswer()
+                shirtAnswer()
+        shirtAnswer()
 
 def Question2():
     Question2 = input("Shorts or Pants? ")
