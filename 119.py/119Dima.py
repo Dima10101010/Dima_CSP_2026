@@ -26,9 +26,9 @@ def ShirtOne():
     builder.right(60)
     builder.forward(60)
     builder.right(125)
-    builder.forward(60)
+    builder.forward(65)
     builder.left(125)
-    builder.forward(150)
+    builder.goto(75, 0)
     builder.right(90)
     builder.goto(-75, 0)
 
@@ -57,9 +57,9 @@ def ShirtTwo():
     builder.right(60)
     builder.forward(60)
     builder.right(125)
-    builder.forward(60)
+    builder.forward(65)
     builder.left(125)
-    builder.forward(150)
+    builder.goto(75, 0)
     builder.right(90)
     builder.goto(-75, 0)
 
@@ -88,9 +88,9 @@ def ShirtThree():
     builder.right(60)
     builder.forward(60)
     builder.right(125)
-    builder.forward(60)
+    builder.forward(65)
     builder.left(125)
-    builder.forward(150)
+    builder.goto(75, 0)
     builder.right(90)
     builder.goto(-75, 0)
 
@@ -327,44 +327,107 @@ def ShortThree():
     builder.goto(75, 0)
     builder.goto(-75, 0)
     builder.end_fill()
-
 ShortFunctions = [ShortOne, ShortTwo, ShortThree]
 
 PantsOptions = ["Pants One", "Pants Two", "Pants Three"]
 def PantsOne():
-    builder.forward(70)
+    builder.penup()
+    builder.goto(-75, 0)
+    builder.pendown()
+    builder.fillcolor("Red")
+    builder.begin_fill()
+
+    builder.right(180)
+    builder.left(265)
+    builder.forward(250)
+    builder.left(95)
+    builder.forward(75)
+    builder.left(85)
+    builder.forward(220)
+    builder.right(170)
+    builder.forward(220)
+    builder.left(90)
+    builder.forward(75)
+    builder.goto(75, 0)
+    builder.goto(-75, 0)
+    builder.end_fill()
+
 def PantsTwo():
-    builder.forward(80)
+    builder.penup()
+    builder.goto(-75, 0)
+    builder.pendown()
+    builder.fillcolor("Blue")
+    builder.begin_fill()
+
+    builder.right(180)
+    builder.left(265)
+    builder.forward(250)
+    builder.left(95)
+    builder.forward(75)
+    builder.left(85)
+    builder.forward(220)
+    builder.right(170)
+    builder.forward(220)
+    builder.left(90)
+    builder.forward(75)
+    builder.goto(75, 0)
+    builder.goto(-75, 0)
+    builder.end_fill()
+
 def PantsThree():
-    builder.forward(30)
+    builder.penup()
+    builder.goto(-75, 0)
+    builder.pendown()
+    builder.fillcolor("Yellow")
+    builder.begin_fill()
+
+    builder.right(180)
+    builder.left(265)
+    builder.forward(250)
+    builder.left(95)
+    builder.forward(75)
+    builder.left(85)
+    builder.forward(220)
+    builder.right(170)
+    builder.forward(220)
+    builder.left(90)
+    builder.forward(75)
+    builder.goto(75, 0)
+    builder.goto(-75, 0)
+    builder.end_fill()
 PantsFunctions = [PantsOne, PantsTwo, PantsThree]
 
 def shoes():
     builder.forward(20)
 
 def Question1():
-    Qustion1 = input("Shirt or Sweater? ")
-    if Qustion1 == "Sweater":
+    Answers = ("Shirt", "shirt", "Sweater", "sweater")
+    Q1 = input("Shirt or Sweater? ")
+    if Q1 == "Sweater" or  Q1 == "sweater":
         print("Your choices are:", SweaterOptions)
-        UserInputOne = input("Pick a Sweater: ")
 
-        if UserInputOne == "Sweater One":
+        InputOneAnswers = ("Sweater One", "sweater one", "Sweater Two", "")
+        UserInputOne = input("Pick a Sweater: ")
+        if UserInputOne == "Sweater One" or UserInputOne == "sweater one":
             SweaterOne()
-        elif UserInputOne == "Sweater Two":
+        elif UserInputOne == "Sweater Two" or UserInputOne == "sweater two":
             SweaterTwo()
-        elif UserInputOne == "Sweater Three":
+        elif UserInputOne == "Sweater Three" or UserInputOne == "sweater three":
             SweaterThree()
 
-    if Qustion1 == "Shirt":
+    if Q1 == "Shirt" or Q1 == "shirt":
         print("Your choices are:", ShirtOptions)
-        UserInputOne = input("Pick a shirt: ")
 
-        if UserInputOne == "Shirt One":
+        UserInputOne = input("Pick a shirt: ")
+        if UserInputOne == "Shirt One" or UserInputOne == "shirt one":
             ShirtOne()
-        elif UserInputOne == "Shirt Two":
+        elif UserInputOne == "Shirt Two" or UserInputOne == "shirt two":
             ShirtTwo()
-        elif UserInputOne == "Shirt Three":
+        elif UserInputOne == "Shirt Three" or UserInputOne == "shirt three":
             ShirtThree()
+
+    if Q1 != Answers:
+        Question1()
 
 def Question2():
     Question2 = input("Shorts or Pants? ")
