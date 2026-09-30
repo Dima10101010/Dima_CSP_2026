@@ -397,37 +397,45 @@ def PantsThree():
     builder.end_fill()
 PantsFunctions = [PantsOne, PantsTwo, PantsThree]
 
-def shoes():
-    builder.forward(20)
-
 def Question1():
     Answers = ("Shirt", "shirt", "Sweater", "sweater")
     Q1 = input("Shirt or Sweater? ")
+    if Q1 not in Answers:
+        Question1()
     if Q1 == "Sweater" or  Q1 == "sweater":
-        print("Your choices are:", SweaterOptions)
+        def sweaterAnswer():
+            print("Your choices are:", SweaterOptions)
 
-        InputOneAnswers = ("Sweater One", "sweater one", "Sweater Two", "")
-        UserInputOne = input("Pick a Sweater: ")
-        if UserInputOne == "Sweater One" or UserInputOne == "sweater one":
-            SweaterOne()
-        elif UserInputOne == "Sweater Two" or UserInputOne == "sweater two":
-            SweaterTwo()
-        elif UserInputOne == "Sweater Three" or UserInputOne == "sweater three":
-            SweaterThree()
+            InputOneAnswers = ("Sweater One", "sweater one", "Sweater Two", "sweater two", "Sweater Three", "sweater three")
+            UserInputOne = input("Pick a Sweater: ")
+            if UserInputOne in InputOneAnswers:
+                if UserInputOne == "Sweater One" or UserInputOne == "sweater one":
+                    SweaterOne()
+                elif UserInputOne == "Sweater Two" or UserInputOne == "sweater two":
+                    SweaterTwo()
+                elif UserInputOne == "Sweater Three" or UserInputOne == "sweater three":
+                    SweaterThree()
+            elif UserInputOne not in InputOneAnswers:
+                sweaterAnswer()
+        sweaterAnswer()
+
 
     if Q1 == "Shirt" or Q1 == "shirt":
-        print("Your choices are:", ShirtOptions)
+        def shirtAnswer():
+            print("Your choices are:", ShirtOptions)
 
-        UserInputOne = input("Pick a shirt: ")
-        if UserInputOne == "Shirt One" or UserInputOne == "shirt one":
-            ShirtOne()
-        elif UserInputOne == "Shirt Two" or UserInputOne == "shirt two":
-            ShirtTwo()
-        elif UserInputOne == "Shirt Three" or UserInputOne == "shirt three":
-            ShirtThree()
-
-    if Q1 != Answers:
-        Question1()
+            InputOneAnswers = ("Shirt One", "shirt one", "Shirt Two", "shirt two", "Shirt Three", "shirt three")
+            UserInputOne = input("Pick a shirt: ")
+            if UserInputOne in InputOneAnswers:
+                if UserInputOne == "Shirt One" or UserInputOne == "shirt one":
+                    ShirtOne()
+                elif UserInputOne == "Shirt Two" or UserInputOne == "shirt two":
+                    ShirtTwo()
+                elif UserInputOne == "Shirt Three" or UserInputOne == "shirt three":
+                    ShirtThree()
+            elif UserInputOne not in InputOneAnswers:
+                sweaterAnswer()
+        sweaterAnswer()
 
 def Question2():
     Question2 = input("Shorts or Pants? ")
@@ -453,17 +461,8 @@ def Question2():
             elif UserInputTwo == "Pants Three":
                 PantsThree()
 
-def Question3():
-    Question3 = input("Shoes or no shoes? ")
-    if Question3 == "Shoes":
-        shoes()
-    elif Question3 == "No":
-        print("Here is your outfit")
-
-
 Question1()
 Question2()
-Question3()
 
 wn = trtl.Screen()
 wn.mainloop()
