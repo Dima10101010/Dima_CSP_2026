@@ -1,6 +1,13 @@
 import turtle as trtl
+wn = trtl.Screen()
+
+hand = ((-10, -20), (-10, 0), (-20, 30), (-12, 35), (-5, 10), (-5, 45), (3, 47), (5, 10), (10, 40), (18, 40), (12, 5), (20, 30), (27, 27), (18, 0), (15, -20))
+
+wn.register_shape("hand", hand)
 
 builder = trtl.Turtle()
+builder.shape("hand")
+builder.speed(5)
 
 ShirtOptions = ["Shirt One", "Shirt Two", "Shirt Three"]
 def ShirtOne():
@@ -482,5 +489,4 @@ Question2()
 
 print("Here is your outfit")
 
-wn = trtl.Screen()
 wn.mainloop()
