@@ -408,6 +408,7 @@ def Question1():
     Answers = ["Shirt", "shirt", "Sweater", "sweater"]
     Q1 = input("Shirt or Sweater? ")
     if Q1 not in Answers:
+        print("Not a valid option, check your spelling and try again")
         Question1()
     if Q1 == "Sweater" or  Q1 == "sweater":
         def sweaterAnswer():
@@ -423,6 +424,7 @@ def Question1():
                 elif UserInputOne == "Sweater Three" or UserInputOne == "sweater three":
                     SweaterThree()
             elif UserInputOne not in InputOneAnswers:
+                print("Not a valid option, check your spelling and try again")
                 sweaterAnswer()
         sweaterAnswer()
 
@@ -441,6 +443,7 @@ def Question1():
                 elif UserInputOne == "Shirt Three" or UserInputOne == "shirt three":
                     ShirtThree()
             elif UserInputOne not in InputOneAnswers:
+                print("Not a valid option, check your spelling and try again")
                 shirtAnswer()
         shirtAnswer()
 
@@ -448,6 +451,7 @@ def Question2():
     Answers = ["Shorts", "shorts", "Pants", "pants"]
     Q2 = input("Shorts or Pants? ")
     if Q2 not in Answers:
+        print("Not a valid option, check your spelling and try again")
         Question2()
 
     if Q2 == "Shorts" or Q2 == "shorts":
@@ -464,6 +468,7 @@ def Question2():
                 elif UserInputTwo == "Short Three" or UserInputTwo == "short three":
                     ShortThree()
             elif UserInputTwo not in InputTwoAnswers:
+                print("Not a valid option, check your spelling and try again")
                 shortAnswer()
         shortAnswer()
 
@@ -481,11 +486,23 @@ def Question2():
                 elif UserInputTwo == "Pants Three" or UserInputTwo == "pants three":
                     PantsThree()
             elif UserInputTwo not in InputTwoAnswers:
+                print("Not a valid option, check your spelling and try again")
                 pantsAnswer()
         pantsAnswer()
 
+def Question3():
+    colors = ["red", "Red", "orange", "Orange", "yellow", "Yellow", "green", "Green", "blue", "Blue", "purple", "Purple", "pink", "Pink", "brown", "Brown", "black", "Black", "white", "White", "gray", "Gray", "cyan", "Cyan", "magenta", "Magenta"]
+    Q3 = input("What background color would you like? ")
+    if Q3 not in colors:
+        print("Not a valid color, try again")
+        Question3()
+
+    if Q3 in colors:
+        wn.bgcolor(Q3)
+
 Question1()
 Question2()
+Question3()
 
 print("Here is your outfit")
 
